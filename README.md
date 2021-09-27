@@ -3,7 +3,11 @@ ez_zone_app_version_ceo&siri
 
 this app use: 
 - database sqlite
-- vuex
+- vuex modules
+  - modules stock
+  - modules pos
+  - modules product
+  - user is state
 - vue cli
 - django
 - django app

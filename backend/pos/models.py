@@ -26,6 +26,11 @@ class Order(models.Model):
     customer_name = models.CharField(max_length=100)
     descriptions = models.TextField()
     status_order = models.IntegerField(choices=STATUS_ORDER,default=ON_COOKING)
+    create_by = models.ForeignKey(
+        'user.User', on_delete=models.PROTECT, related_name="order_create_by")
+    update_by = models.ForeignKey(
+        'user.User', on_delete=models.PROTECT, related_name="order_update_by")
+
 
 class OrderItem(models.Model):
     FLAVOUR_0 = '0'

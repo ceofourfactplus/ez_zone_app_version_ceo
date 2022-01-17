@@ -14,8 +14,8 @@ class Supplier(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(blank=True, null=True)
     create_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="supplier_create_by")
-    update_by = models.ForeignKey('auth.User', on_delete=models.PROTECT,
+        'user.User', on_delete=models.PROTECT, related_name="supplier_create_by")
+    update_by = models.ForeignKey('user.User', on_delete=models.PROTECT,
                                   related_name="supplier_update_by", blank=True, null=True)
 
 
@@ -41,9 +41,9 @@ class Stock(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now_add=True)
     create_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="stock_create_by")
+        'user.User', on_delete=models.PROTECT, related_name="stock_create_by")
     update_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="stock_update_by")
+        'user.User', on_delete=models.PROTECT, related_name="stock_update_by")
 
 
 class StockTrance(models.Model):
@@ -51,7 +51,7 @@ class StockTrance(models.Model):
     amount = models.IntegerField()
     create_at = models.DateTimeField(auto_now_add=True)
     create_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="stock_trance_create_by")
+        'user.User', on_delete=models.PROTECT, related_name="stock_trance_create_by")
 
 
 class Payer(models.Model):
@@ -80,9 +80,9 @@ class Invoice(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now_add=True)
     create_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="invoice_create_by")
+        'user.User', on_delete=models.PROTECT, related_name="invoice_create_by")
     update_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="invoice_update_by", blank=True)
+        'user.User', on_delete=models.PROTECT, related_name="invoice_update_by", blank=True)
 
 
 class InvoiceDetail(models.Model):
@@ -97,9 +97,9 @@ class InvoiceDetail(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now_add=True)
     create_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="invoice_detail_create_by")
+        'user.User', on_delete=models.PROTECT, related_name="invoice_detail_create_by")
     update_by = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, related_name="invoice_detail_update_by", blank=True)
+        'user.User', on_delete=models.PROTECT, related_name="invoice_detail_update_by", blank=True)
 
 
 class OrderToBuy(models.Model):

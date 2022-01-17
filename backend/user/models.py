@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    is_email_verified = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.email
+    # is_email_verify = models.BooleanField(default=False)
+    # is_pos_user = models.BooleanField(default=False)
+    pass
